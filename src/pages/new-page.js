@@ -1,23 +1,25 @@
 import React from "react";
-import graphql from "gatsby";
+import {graphql} from "gatsby";
 import Layout from "../components/layout";
 
 
-const NewPage = ({ data: {new_page} }) => (
-	<Layout>
-		<p>
-			{new_page.paragraphs}
-		</p>
-	</Layout>
-);
-
-
+const NewPage = ({data: {newPage: {pageHeadline, paragraph}}}) => {
+    return (
+        <Layout>
+            <article className="sheet">
+                <div className="sheet__inner">
+                    <h1>{pageHeadline}</h1>
+                    <p>{paragraph}</p>
+                </div>
+            </article>
+        </Layout>
+    );
+}
 export default NewPage
 
-export const query = graphql`
-    query NewPageQuery {
-        new_page: datoCmsNewPage( date: {} ) {
-            id
+export const NewPageQuery = graphql`
+    query NewPage {
+        newPage: datoCmsNewPage {
             pageHeadline
             paragraph
         }
