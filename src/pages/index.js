@@ -4,6 +4,7 @@ import {graphql} from "gatsby";
 import BannerBlock from "../components/banner/banner";
 import TitledSection from "../components/titledSection";
 import TopArticles from "../components/topArticles";
+import TopPartners from "../components/topPartners";
 
 const IndexPage = ({
 	                   data: {
@@ -13,6 +14,7 @@ const IndexPage = ({
 			                   bannerSubtitle,
 			                   description,
 			                   topPartnersTitle,
+			                   topPartners,
 			                   topArticlesTitle,
 			                   topArticles
 		                   }
@@ -27,13 +29,15 @@ const IndexPage = ({
 					title={bannerTitle}
 					subtitle={bannerSubtitle}
 				/>
-				<p>{description}</p>
-				<TitledSection title={topPartnersTitle}>
 				
+				<p>{description}</p>
+				
+				<TitledSection title={topPartnersTitle}>
+					<TopPartners topPartners={topPartners}/>
 				</TitledSection>
 				
 				<TitledSection title={topArticlesTitle}>
-					<TopArticles articles={topArticles}/>
+					<TopArticles topArticles={topArticles}/>
 				</TitledSection>
 			
 			
@@ -60,6 +64,11 @@ export const query = graphql`
             title
             slug
             description
+            coverImage {
+                fixed {
+                    src
+                }
+            }
         }
         topArticlesTitle
         topArticles {

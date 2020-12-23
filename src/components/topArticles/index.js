@@ -1,12 +1,12 @@
 import React from "react";
 import ArticleTile from "./articleTile";
 
-const TopArticles = ({articles}) => {
+const TopArticles = ({topArticles}) => {
 	
 	return(
 		<ul>
 			{
-				articles.map(article => (
+				topArticles.map(article => (
 					<li key={article.id}>
 						<ArticleTile
 							title={article.title}
