@@ -3,6 +3,7 @@ import useNavLinks from "../../hooks/use-nav-links";
 import Navbar from "./navbar";
 
 const Index = () => {
+    
     const links = useNavLinks();
 
     return (
@@ -12,6 +13,6 @@ const Index = () => {
         </header>
     )
 }
-
+ 
 export default Index
 

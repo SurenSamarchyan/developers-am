@@ -6,11 +6,13 @@ const useNavLinks = () => {
         query navLinks {
           navLinks: allDatoCmsNavLink {
             nodes {
+              id
               url
               title
               openInNewTab
               originalId
               treeChildren {
+                id
                 title
                 url
                 openInNewTab

@@ -4,7 +4,7 @@ const SubMenu = ({subMenuItems}) => (
     <ul>
         {
             subMenuItems.map(item => (
-                <li>
+                <li key={item.id}>
                     <a href={item.url} target={item.openInNewTab ? "_blank" : "_self"}>
                         {item.title}
                     </a>
