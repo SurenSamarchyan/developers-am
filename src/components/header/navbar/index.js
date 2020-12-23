@@ -6,7 +6,7 @@ const Navbar = ({links}) => (
         <ul>
             {
                 links.map(link => (
-                    <li key={link}>
+                    <li key={link.id}>
                         <a href={link.url} target={link.openInNewTab ? "_blank" : "_self"}>
                             {link.title}
                         </a>
