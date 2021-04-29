@@ -1,13 +1,13 @@
 import React from "react";
-import SubMenu from "./subMenu";
+import SubMenu from "./SubMenu/SubMenu";
 
-const Navbar = ({links}) => (
+const NavBar = ({links}) => (
     <nav>
         <ul>
             {
                 links.map(link => (
                     <li key={link.id}>
-                        <a href={link.url} target={link.openInNewTab ? "_blank" : "_self"}>
+                        <a href={link.url} target={link.openInNewTab ? "_blank" : "_self"} rel='noreferrer'>
                             {link.title}
                         </a>
                         {
@@ -20,4 +20,4 @@ const Navbar = ({links}) => (
     </nav>
 )
 
-export default Navbar
+export default NavBar

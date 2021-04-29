@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleTile from "./articleTile";
+import ArticleTile from "./ArticleTile";
 
 const TopArticles = ({topArticles}) => {
 	

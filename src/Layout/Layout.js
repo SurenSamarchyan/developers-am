@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import {GlobalStyles} from "../styles/globalStyles";
 
 const Layout = ({children}) => {
 	return (
 		<>
+			<GlobalStyles/>
 			<Header/>
 			<main>{children}</main>
 			<Footer/>

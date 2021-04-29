@@ -1,5 +1,5 @@
 import React from "react";
-import PartnerTile from "./partnerTile";
+import PartnerTile from "./PartnerTile";
 
 const TopPartners = ({topPartners}) => {
 	
