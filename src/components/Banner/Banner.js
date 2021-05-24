@@ -8,53 +8,64 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
 
     const Banner = styled.div`
     {
+      padding: 30px 0;
       display: flex;
       align-items: center;
       background-image: url("${bgImage.url}");
       background-size: cover;
       background-position: center;
-
-
-      ${theme.media.sm} {
-        //   height: 665px;
-        //   padding: ;
-      }
+      text-align: center;
 
       ${theme.media.md} {
-        height: 655px;
-        padding: ${theme.space.xl}px ${theme.space.xxl}px;
+        min-height: 655px;
+        padding: ${theme.space.xl}px 0;
+        text-align: left;
       }
 
       ${theme.media.lg} {
-        height: 655px;
-        padding: ${theme.space.xxl}px ${theme.space.xl4}px;
+        min-height: 655px;
+        padding: ${theme.space.xxl}px 0;
       }
 
       ${theme.media.xl} {
-        padding: 120px 300px;
+        padding: 120px 0;
       }
 
-      // why is it needed
-      &.opacity-block {
-        display: inline;
+      .opacity-block {
+        padding-bottom: 4px;
+        
+        &::before {
+          top: -16px;
+          right: -10px;
+          bottom: -16px;
+          left: -10px;
+
+          ${theme.media.md} {
+            top: -16px;
+            right: -10px;
+            bottom: -16px;
+            left: -10px;
+          }
+
+          ${theme.media.lg} {
+            top: -32px;
+            right: 88px;
+            bottom: -32px;
+            left: -88px;
+          }
+        }
       }
     }
     `
+
     const BannerTitle = styled.h1` {
       display: block;
 
-      height: 114px;
-      max-width: 484px;
-      max-height: 114px;
-      padding-top: 30px;
-
-      font-size: ${theme.fontSizes.xl};
+      font-size: 18px;
       line-height: 120%;
       letter-spacing: 0.07em;
-      font-family: Noto Sans Armenian;
-      font-style: normal;
-      font-weight: normal;
-      
+      font-weight: 600;
+
       color: ${theme.colors.red};
 
       ${theme.media.sm} {
@@ -62,59 +73,51 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
       }
 
       ${theme.media.md} {
-        padding-top: 0px;
+        max-width: 484px;
+        max-height: 114px;
         font-size: 32px;
       }
     }`
 
     const BannerText = styled.p` {
       display: block;
-      
+      margin: 24px 0;
       max-width: 600px;
-      max-height: 180px;
-      margin-top: 24px;
 
-      font-size: ${theme.fontSizes.xxl};
-      font-family: Noto Sans Armenian;
+      font-size: 24px;
       font-style: normal;
       font-weight: ${theme.fontWeights.medium};
 
       color: ${theme.colors.blue};
 
-
-      ${theme.media.sm} {
-        font-size: ${theme.fontSizes.xl3}
-      }
-      
       ${theme.media.md} {
         font-size: ${theme.fontSizes.xl3}
+        max-height: 180px;
       }
 
     }`
 
     const BannerButton = styled(AnchorLink)` {
-      display: block;
-
-      width: 276px;
-      height: 56px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      padding: 16px 56px;
+      display: inline-block;
+      height: 48px;
+      padding: 12px 32px;
       border-radius: 10px;
 
       background-color: ${theme.colors.red};
-      
-      font-size: 20px;
+
+      font-size: 16px;
       text-decoration: none;
-      font-family: "Noto Sans Armenian";
       font-style: normal;
       font-weight: ${theme.fontWeights.bold};
 
       color: white;
+
+      ${theme.media.md} {
+        height: 56px;
+        padding: 16px 56px;
+        font-size: 20px;
+      }
     }`
-
-
-
 
 
     return (

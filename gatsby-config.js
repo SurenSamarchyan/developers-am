@@ -9,6 +9,9 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-anchor-links`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-datocms`,
       options: {

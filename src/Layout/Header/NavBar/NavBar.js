@@ -39,7 +39,6 @@ const NavBar = ({links}) => {
         font-size: ${theme.fontSizes.l};
         font-weight: ${theme.fontWeights.semibold};
         line-height: 27px;
-        font-family: Noto Sans Armenian;
         font-style: ${theme.fontWeights.regular};
         text-decoration: none;
         
