@@ -1,9 +1,9 @@
 import React from 'react'
 import {graphql} from "gatsby";
 import BannerBlock from "../components/Banner/Banner";
-import TitledSection from "../components/TitledSection/TitledSection";
+import TitledSection from "../components/common/TitledSection/TitledSection";
 import TopArticles from "../components/TopArticles/TopArticles";
-import TopPartners from "../components/TopPartners/PartnerTile";
+import TopPartners from "../components/TopPartners/TopPartners";
 
 const IndexPage = ({
                        data: {
@@ -28,13 +28,11 @@ const IndexPage = ({
                 subtitle={bannerSubtitle}
             />
 
-            <p>{description}</p>
-
-            <TitledSection title={topPartnersTitle}>
+            <TitledSection title={topPartnersTitle} id={'partners'}>
                 <TopPartners topPartners={topPartners}/>
             </TitledSection>
 
-            <TitledSection title={topArticlesTitle}>
+            <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
             </TitledSection>
         </>
@@ -56,9 +54,8 @@ export const query = graphql`
             slug
             description
             coverImage {
-                fixed {
-                    src
-                }
+                alt
+                gatsbyImageData
             }
         }
         topArticlesTitle

@@ -1,5 +1,3 @@
-import { palette } from './palette'
-
 export const baseFontSize = 14
 
 const breakpoints = {
@@ -20,7 +18,7 @@ export const theme = {
         xxl: baseSpace * 5,
         xxl2: baseSpace * 6,
         xxl3: baseSpace * 7,
-        xxl4: baseSpace * 8,
+        xxl4: baseSpace*8,
         xxl5: baseSpace * 9,
         xxl6: baseSpace * 10,
         xxl7: baseSpace * 11,
@@ -84,20 +82,8 @@ export const theme = {
         },
     },
     colors: {
-        palette: palette,
-        alert: {
-            warning: {
-                main: palette.signal.orange,
-                background: '#fff3e5',
-            },
-            error: {
-                main: palette.signal.purple,
-                background: '#ffe5e5',
-            },
-        },
-        background: {
-            default: 'transparent',
-        },
+        red: '#E52F42',
+        blue: '#0E2B56',
     },
     borderRadius: 4,
     borderRadiusSizes: {

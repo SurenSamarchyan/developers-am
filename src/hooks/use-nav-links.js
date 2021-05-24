@@ -4,7 +4,7 @@ const useNavLinks = () => {
    const {navLinks} = useStaticQuery(
         graphql`
         query navLinks {
-          navLinks: allDatoCmsNavLink {
+          navLinks: allDatoCmsNavLink(sort: {fields: position}) {
             nodes {
               id
               url

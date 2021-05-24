@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -15,5 +16,4 @@ module.exports = {
       },
     },
   ],
-  
 }
