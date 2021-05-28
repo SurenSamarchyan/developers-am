@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import {theme} from "../../../styles/theme";
 
+import { uniqueId } from 'lodash'
+
 const Grid = styled.ul`
   display: flex;
   flex-direction: column;
@@ -25,10 +27,10 @@ const GridItem = styled.li`
     height: 100%;
   }
 `
-const ContentGrid = ({children}) => (
+const ContentGrid = ({children}) => (                                                      
     <Grid>
         {children.map(item => (
-            <GridItem>{item}</GridItem>
+            <GridItem key={uniqueId('col')}>{item}</GridItem>
         ))}
     </Grid>
 )

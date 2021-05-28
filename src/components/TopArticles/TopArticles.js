@@ -13,6 +13,7 @@ const TopArticles = ({topArticles}) => {
 						coverImageSrc={article.coverImage?.fixed?.src}
 						description={article.description}
 						slug={article.slug}
+						key={article.id}
 					/>
 				))
 			}

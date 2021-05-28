@@ -3,8 +3,6 @@ import {GatsbyImage} from "gatsby-plugin-image";
 
 const PartnerTile = ({title, slug, coverImage}) => {
 
-    //const PartnerTitle = style.
-
     return (
         <a href={`/${slug}`}>
             {coverImage && <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200}}/>}

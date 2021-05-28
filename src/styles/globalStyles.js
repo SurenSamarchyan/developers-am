@@ -79,7 +79,6 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-
     font-family: inherit;
   }
 
@@ -90,6 +89,10 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   .opacity-block {
@@ -119,6 +122,7 @@ export const GlobalStyles = createGlobalStyle`
       ${theme.media.md} {
         border-radius: 6px;
       }
+
       ${theme.media.lg} {
         border-radius: 8px;
       }

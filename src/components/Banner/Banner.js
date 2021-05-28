@@ -4,14 +4,12 @@ import {ContainerBox} from "../common/ContainerBox/ContainerBox";
 import {theme} from "../../styles/theme";
 import {AnchorLink} from "gatsby-plugin-anchor-links";
 
-const BannerBlock = ({bgImage, title, subtitle}) => {
-
-    const Banner = styled.div`
+const Banner = styled.div`
     {
       padding: 30px 0;
       display: flex;
       align-items: center;
-      background-image: url("${bgImage.url}");
+      background-image: url("${props => props.bgImage.url}");
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -58,7 +56,7 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
     }
     `
 
-    const BannerTitle = styled.h1` {
+const BannerTitle = styled.h1` {
       display: block;
 
       font-size: 18px;
@@ -69,7 +67,7 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
       color: ${theme.colors.red};
 
       ${theme.media.sm} {
-        font-size: 24px;
+        font-size: 22px;
       }
 
       ${theme.media.md} {
@@ -79,7 +77,7 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
       }
     }`
 
-    const BannerText = styled.p` {
+const BannerText = styled.p` {
       display: block;
       margin: 24px 0;
       max-width: 600px;
@@ -91,13 +89,13 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
       color: ${theme.colors.blue};
 
       ${theme.media.md} {
-        font-size: ${theme.fontSizes.xl3}
+        font-size: 48px;
         max-height: 180px;
       }
 
     }`
 
-    const BannerButton = styled(AnchorLink)` {
+const BannerButton = styled(AnchorLink)` {
       display: inline-block;
       height: 48px;
       padding: 12px 32px;
@@ -120,8 +118,10 @@ const BannerBlock = ({bgImage, title, subtitle}) => {
     }`
 
 
+const BannerBlock = ({bgImage, title, subtitle}) => {
+
     return (
-        <Banner>
+        <Banner bgImage={bgImage}>
             <ContainerBox className='opacity-block'>
                 <BannerTitle>{subtitle}</BannerTitle>
                 <BannerText>{title}</BannerText>

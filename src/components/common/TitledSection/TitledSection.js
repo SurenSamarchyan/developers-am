@@ -8,22 +8,22 @@ const SectionWrapper = styled(ContainerBox)`
   flex-direction: column;
   justify-content: space-between;
 
-  margin-top: 36px;
-  margin-bottom: 36px;
-  
+  padding-top: 36px;
+  padding-bottom: 36px;
+
   ${theme.media.md} {
     flex-direction: row;
-    
-    margin-top: 48px;
-    margin-bottom: 48px;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   ${theme.media.lg} {
-    margin-top: 56px;
-    margin-bottom: 56px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
   ${theme.media.xl} {
-    margin-top: 280px;
-    margin-bottom: 280px;
+    padding-top: 280px;
+    padding-bottom: 280px;
   }
 `
 const SectionTitle = styled.h2`
