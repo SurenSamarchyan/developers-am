@@ -15,13 +15,12 @@ const Banner = styled.div`
       text-align: center;
 
       ${theme.media.md} {
-        min-height: 655px;
         padding: ${theme.space.xl}px 0;
         text-align: left;
+        height: calc(100vh - 90px);
       }
 
       ${theme.media.lg} {
-        min-height: 655px;
         padding: ${theme.space.xxl}px 0;
       }
 

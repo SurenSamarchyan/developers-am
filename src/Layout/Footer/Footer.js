@@ -1,10 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
 const Footer = () => (
-    <footer>
+    <StyledFooter>
         Footer
-    </footer>
+    </StyledFooter>
 )
+
+const StyledFooter = styled.footer`
+  height: 1500px;
+`
 
 export default Footer
 

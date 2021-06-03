@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {theme} from "../../../styles/theme";
 import {ContainerBox} from "../ContainerBox/ContainerBox";
+import SeeMore from "../../SeeMore/SeeMore";
 
 const SectionWrapper = styled(ContainerBox)`
   display: flex;
@@ -22,8 +23,8 @@ const SectionWrapper = styled(ContainerBox)`
     padding-bottom: 56px;
   }
   ${theme.media.xl} {
-    padding-top: 280px;
-    padding-bottom: 280px;
+    padding-top: 160px;
+    padding-bottom: 160px;
   }
 `
 const SectionTitle = styled.h2`
@@ -41,7 +42,12 @@ const SectionTitle = styled.h2`
 `
 
 const SectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
   ul{
+    width: 100%;
     list-style-type: none;
   }
   
@@ -55,10 +61,13 @@ const SectionContent = styled.div`
   }
 `
 
-const TitledSection = ({title, id, children}) => (
+const TitledSection = ({title, id, children, seeMoreLink}) => (
     <SectionWrapper id={id}>
         <SectionTitle>{title}</SectionTitle>
-        <SectionContent>{children}</SectionContent>
+        <SectionContent>
+            {children}
+            {seeMoreLink && <SeeMore link={''} text={'Տեսնել ավելին'}/>}
+        </SectionContent>
     </SectionWrapper>
 )
 

@@ -15,8 +15,11 @@ const Grid = styled.ul`
 `
 
 const GridItem = styled.li`
+  margin-bottom: 32px;
+  
   ${theme.media.md} {
-    width: calc(25% - 18px);
+    width: calc(24% - 16px);
+    margin-bottom: 0;
   }
   
   a {

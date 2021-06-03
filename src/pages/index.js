@@ -6,7 +6,6 @@ import TitledSection from "../components/common/TitledSection/TitledSection";
 import TopArticles from "../components/TopArticles/TopArticles";
 import TopPartners from "../components/TopPartners/TopPartners";
 import Text from "../components/common/Text";
-import SeeMore from "../components/SeeMore/SeeMore";
 import {useWindowSize} from "../hooks/useWindowSize";
 
 const TopPartnersSection = styled(TitledSection)`
@@ -48,7 +47,7 @@ const IndexPage = ({
                       textType={'html'}/>
             </TitledSection>
 
-            <TopPartnersSection title={topPartnersTitle} id={'partners'}>
+            <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
                 <TopPartners topPartners={topPartners}/>
             </TopPartnersSection>
 
@@ -75,7 +74,7 @@ export const query = graphql`
             slug
             coverImage {
                 alt
-                gatsbyImageData
+                gatsbyImageData(aspectRatio: 1)
             }
         }
         topArticlesTitle
