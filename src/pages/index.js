@@ -7,6 +7,7 @@ import TopArticles from "../components/TopArticles/TopArticles";
 import TopPartners from "../components/TopPartners/TopPartners";
 import Text from "../components/common/Text";
 import {useWindowSize} from "../hooks/useWindowSize";
+import ContactUs from "../components/ContactUs/ContactUs";
 
 const TopPartnersSection = styled(TitledSection)`
   background-color: red;
@@ -24,7 +25,9 @@ const IndexPage = ({
                                topPartnersTitle,
                                topPartners,
                                topArticlesTitle,
-                               topArticles
+                               topArticles,
+                               contactUsTitle,
+                               contactUsBackgroundImage,
                            }
                        }
                    }) => {
@@ -54,42 +57,53 @@ const IndexPage = ({
             <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
             </TitledSection>
+
+            <ContactUs title={contactUsTitle}
+                       bgImage={contactUsBackgroundImage}
+            />
         </>
+
     )
 }
 
 export const query = graphql`
-    query { datoCmsHomePage {
-        bannerSubtitle
-        bannerTitle
-        bannerBackgroundImage {
-            url
-        }
-        aboutUsTitle,
-        aboutUsText,
-        topPartnersTitle
-        topPartners {
-            id
-            title
-            slug
-            coverImage {
-                alt
-                gatsbyImageData(aspectRatio: 1)
+    query {
+        datoCmsHomePage {
+            bannerSubtitle
+            bannerTitle
+            bannerBackgroundImage {
+                url
             }
-        }
-        topArticlesTitle
-        topArticles {
-            id
-            title
-            slug
-            description
-            coverImage {
-                fixed {
-                    src
+            aboutUsTitle,
+            aboutUsText,
+            topPartnersTitle
+            topPartners {
+                id
+                title
+                slug
+                coverImage {
+                    alt
+                    gatsbyImageData(aspectRatio: 1)
                 }
             }
+            topArticlesTitle
+            topArticles {
+                id
+                title
+                slug
+                description
+                coverImage {
+                    fixed {
+                        src
+                    }
+                }
+            }
+            contactUsTitle
+            contactUsBackgroundImage {
+                url
+            }
+
         }
-    }
     }`
 
 export default IndexPage

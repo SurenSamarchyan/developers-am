@@ -9,38 +9,6 @@ import {theme} from "../../styles/theme";
 import {useWindowSize} from "../../hooks/useWindowSize";
 import MenuBtn from "./MenuBtn";
 
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  z-index: 9999;
-  box-shadow: 3px -5px 8px 2px ${theme.colors.red};
-`
-
-const HeaderContainerBox = styled(ContainerBox)`
-  min-height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
-const LogoWrapper = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  height: 52px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  text-transform: uppercase;
-  color: #0E2B56;
-
-  ${theme.media.xl} {
-    font-size: 16px;
-  }
-`
 
 const Header = () => {
     const links = useNavLinks();
@@ -76,6 +44,40 @@ const Header = () => {
         </StyledHeader>
     )
 }
+
+const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 9999;
+  box-shadow: 3px -5px 8px 2px ${theme.colors.red};
+`
+
+const HeaderContainerBox = styled(ContainerBox)`
+  min-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+ const LogoWrapper = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #0E2B56;
+
+  ${theme.media.xl} {
+    font-size: 16px;
+  }
+`
+
 
 export default Header
 

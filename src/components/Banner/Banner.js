@@ -3,6 +3,19 @@ import styled from "styled-components"
 import {ContainerBox} from "../common/ContainerBox/ContainerBox";
 import {theme} from "../../styles/theme";
 import {AnchorLink} from "gatsby-plugin-anchor-links";
+import {StyledBtn} from "../../styles/globalStyles";
+
+const BannerBlock = ({bgImage, title, subtitle}) => {
+
+    return (
+        <Banner bgImage={bgImage}>
+            <ContainerBox className='opacity-block'>
+                <BannerTitle>{subtitle}</BannerTitle>
+                <BannerText>{title}</BannerText>
+                <BannerButton to={''} title={'Հաստատել կապ'}/>
+            </ContainerBox>
+        </Banner>)
+}
 
 const Banner = styled.div`
     {
@@ -96,36 +109,9 @@ const BannerText = styled.p` {
 
 const BannerButton = styled(AnchorLink)` {
       display: inline-block;
-      height: 48px;
-      padding: 12px 32px;
-      border-radius: 10px;
-
-      background-color: ${theme.colors.red};
-
-      font-size: 16px;
-      text-decoration: none;
-      font-style: normal;
-      font-weight: ${theme.fontWeights.bold};
-
-      color: white;
-
-      ${theme.media.md} {
-        height: 56px;
-        padding: 16px 56px;
-        font-size: 20px;
-      }
+      ${StyledBtn}
     }`
 
 
-const BannerBlock = ({bgImage, title, subtitle}) => {
 
-    return (
-        <Banner bgImage={bgImage}>
-            <ContainerBox className='opacity-block'>
-                <BannerTitle>{subtitle}</BannerTitle>
-                <BannerText>{title}</BannerText>
-                <BannerButton to={''} title={'Հաստատել կապ'}/>
-            </ContainerBox>
-        </Banner>)
-}
 export default BannerBlock

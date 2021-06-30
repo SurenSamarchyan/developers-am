@@ -4,6 +4,16 @@ import {theme} from "../../../styles/theme";
 import {ContainerBox} from "../ContainerBox/ContainerBox";
 import SeeMore from "../../SeeMore/SeeMore";
 
+const TitledSection = ({title, id, children, seeMoreLink}) => (
+    <SectionWrapper id={id}>
+        <SectionTitle>{title}</SectionTitle>
+        <SectionContent>
+            {children}
+            {seeMoreLink && <SeeMore link={''} text={'Տեսնել ավելին'}/>}
+        </SectionContent>
+    </SectionWrapper>
+)
+
 const SectionWrapper = styled(ContainerBox)`
   display: flex;
   flex-direction: column;
@@ -36,7 +46,7 @@ const SectionTitle = styled.h2`
   color: ${theme.colors.red};
   
   ${theme.media.md} {
-    max-width: 228px;
+    max-width: 232px;
     width: 25%;
   }
 `
@@ -61,14 +71,6 @@ const SectionContent = styled.div`
   }
 `
 
-const TitledSection = ({title, id, children, seeMoreLink}) => (
-    <SectionWrapper id={id}>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionContent>
-            {children}
-            {seeMoreLink && <SeeMore link={''} text={'Տեսնել ավելին'}/>}
-        </SectionContent>
-    </SectionWrapper>
-)
+
 
 export default TitledSection

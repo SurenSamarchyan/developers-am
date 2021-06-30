@@ -1,5 +1,5 @@
 import {theme} from "./theme";
-import {createGlobalStyle} from 'styled-components'
+import {createGlobalStyle, css} from 'styled-components'
 import NotoSansAmBlack from './../assets/Fonts/NotoSansArmenian-Black.ttf'
 import NotoSansAmBold from './../assets/Fonts/NotoSansArmenian-Bold.ttf'
 import NotoSansAmXBold from './../assets/Fonts/NotoSansArmenian-ExtraBold.ttf'
@@ -128,4 +128,25 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
   }
+`
+
+export const StyledBtn = css`
+      min-height: 48px;
+      padding: 12px 32px;
+      border-radius: 10px;
+
+      background-color: ${theme.colors.red};
+
+      font-size: 16px;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: ${theme.fontWeights.bold};
+
+      color: white;
+
+      ${theme.media.md} {
+            height: 56px;
+            padding: 16px 56px;
+            font-size: 20px;
+      }
 `

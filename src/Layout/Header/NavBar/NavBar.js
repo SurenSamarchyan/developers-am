@@ -4,6 +4,27 @@ import {AnchorLink} from "gatsby-plugin-anchor-links";
 import styled from "styled-components";
 import {theme} from "../../../styles/theme";
 
+const NavBar = ({links, className, onClick}) => {
+
+    return (
+        <StyledNav className={className}>
+            <ul>
+                {
+                    links.map(link => (
+                        <li key={link.id} onClick={onClick}>
+
+                            <AnchorLink to={link.url} title={link.title}/>
+                            {
+                                link.treeChildren.length > 0 && <SubMenu subMenuItems={link.treeChildren}/>
+                            }
+                        </li>
+                    ))
+                }
+            </ul>
+        </StyledNav>
+    )
+}
+
 const StyledNav = styled.nav`
   min-height: 0;
   transition: min-height .3s ease .5s;
@@ -73,26 +94,5 @@ const StyledNav = styled.nav`
     }
   }
 `;
-
-const NavBar = ({links, className, onClick}) => {
-
-    return (
-        <StyledNav className={className}>
-            <ul>
-                {
-                    links.map(link => (
-                        <li key={link.id} onClick={onClick}>
-
-                            <AnchorLink to={link.url} title={link.title}/>
-                            {
-                                link.treeChildren.length > 0 && <SubMenu subMenuItems={link.treeChildren}/>
-                            }
-                        </li>
-                    ))
-                }
-            </ul>
-        </StyledNav>
-    )
-}
 
 export default NavBar
