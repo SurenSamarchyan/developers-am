@@ -1,88 +1,109 @@
 import React from 'react'
-import Layout from "../components/layout"
 import {graphql} from "gatsby";
-import BannerBlock from "../components/banner/banner";
-import TitledSection from "../components/titledSection";
-import TopArticles from "../components/topArticles";
-import TopPartners from "../components/topPartners";
+import styled from "styled-components";
+import BannerBlock from "../components/Banner/Banner";
+import TitledSection from "../components/common/TitledSection/TitledSection";
+import TopArticles from "../components/TopArticles/TopArticles";
+import TopPartners from "../components/TopPartners/TopPartners";
+import Text from "../components/common/Text";
+import {useWindowSize} from "../hooks/useWindowSize";
+import ContactUs from "../components/ContactUs/ContactUs";
+
+const TopPartnersSection = styled(TitledSection)`
+  background-color: red;
+  font-size: 500px;
+`
 
 const IndexPage = ({
-	                   data: {
-		                   datoCmsHomePage: {
-			                   bannerBackgroundImage,
-			                   bannerTitle,
-			                   bannerSubtitle,
-			                   description,
-			                   topPartnersTitle,
-			                   topPartners,
-			                   topArticlesTitle,
-			                   topArticles
-		                   }
-	                   }
+                       data: {
+                           datoCmsHomePage: {
+                               bannerBackgroundImage,
+                               bannerTitle,
+                               bannerSubtitle,
+                               aboutUsTitle,
+                               aboutUsText,
+                               topPartnersTitle,
+                               topPartners,
+                               topArticlesTitle,
+                               topArticles,
+                               contactUsTitle,
+                               contactUsBackgroundImage,
+                           }
+                       }
                    }) => {
-	
-	return (
-		<>
-			<Layout>
-				<BannerBlock
-					bgImage={bannerBackgroundImage}
-					title={bannerTitle}
-					subtitle={bannerSubtitle}
-				/>
-				
-				<p>{description}</p>
-				
-				<TitledSection title={topPartnersTitle}>
-					<TopPartners topPartners={topPartners}/>
-				</TitledSection>
-				
-				<TitledSection title={topArticlesTitle}>
-					<TopArticles topArticles={topArticles}/>
-				</TitledSection>
-			
-			
-			</Layout>
-		
-		</>
-	)
+    const {width} = useWindowSize()
+
+    return (
+        <>
+            <BannerBlock
+                bgImage={bannerBackgroundImage}
+                title={bannerTitle}
+                subtitle={bannerSubtitle}
+            />
+
+            <TitledSection title={aboutUsTitle} id={'aboutUs'}>
+                <Text text={aboutUsText}
+                      as={'div'}
+                      color={'#444444'}
+                      fontSize={width > 991 ? '32px' : '20px'}
+                      lineHeight={'1.5'}
+                      textType={'html'}/>
+            </TitledSection>
+
+            <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
+                <TopPartners topPartners={topPartners}/>
+            </TopPartnersSection>
+
+            <TitledSection title={topArticlesTitle} id={'news'}>
+                <TopArticles topArticles={topArticles}/>
+            </TitledSection>
+
+            <ContactUs title={contactUsTitle}
+                       bgImage={contactUsBackgroundImage}
+            />
+        </>
+
+    )
 }
 
 export const query = graphql`
-    query { datoCmsHomePage {
-        bannerSubtitle
-        bannerTitle
-        bannerBackgroundImage {
-            alt
-            fluid {
-                src
+    query {
+        datoCmsHomePage {
+            bannerSubtitle
+            bannerTitle
+            bannerBackgroundImage {
+                url
             }
-        }
-        description
-        topPartnersTitle
-        topPartners {
-            id
-            title
-            slug
-            description
-            coverImage {
-                fixed {
-                    src
+            aboutUsTitle,
+            aboutUsText,
+            topPartnersTitle
+            topPartners {
+                id
+                title
+                slug
+                coverImage {
+                    alt
+                    gatsbyImageData(aspectRatio: 1)
                 }
             }
-        }
-        topArticlesTitle
-        topArticles {
-            id
-            title
-            slug
-            description
-            coverImage {
-                fixed {
-                    src
+            topArticlesTitle
+            topArticles {
+                id
+                title
+                slug
+                description
+                coverImage {
+                    fixed {
+                        src
+                    }
                 }
             }
+            contactUsTitle
+            contactUsBackgroundImage {
+                url
+            }
+
         }
-    }
     }`
 
 export default IndexPage
