@@ -33,20 +33,23 @@ const ContactUs = ({title, bgImage}) => {
     return (
         <Banner bgImage={bgImage}>
             <TitledSection title={title} id={'contactUs'}>
-                <ContactForm netlify method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">>
+                <ContactForm netlify method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
                     <input type="hidden" name="bot-field" />
                     <input type="hidden" name="form-name" value="contact" />
                     <InputField
                         placeholder={nameFieldTitle}
                         name={'name'}
+                        type={'text'}
                     />
                     <InputField
                         placeholder={emailFieldTitle}
                         name={'email'}
+                        type={'email'}
                     />
                     <InputField
                         placeholder={phoneFieldTitle}
                         name={'phone'}
+                        type={'tel'}
                     />
                     <TextArea
                         placeholder={textFieldTitle}
