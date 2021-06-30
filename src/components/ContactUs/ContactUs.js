@@ -116,6 +116,10 @@ const TextArea = styled.textarea`
 `
 
 const SubmitBtn = styled.button`
-  ${StyledBtn}
+  ${StyledBtn};
+  
+  margin-top: 16px;
+  border: unset;
+  width: 100%;
 `
 export default ContactUs
