@@ -6,7 +6,7 @@ const PartnerTile = ({title, slug, coverImage}) => {
 
     return (
         <StyledPartnerTile href={`/${slug}`}>
-            {coverImage && <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200}}/>}
+            {coverImage && <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200, borderRadius: 3}}/>}
             <h3>{title}</h3>
         </StyledPartnerTile>
     )

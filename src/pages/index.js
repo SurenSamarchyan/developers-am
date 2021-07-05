@@ -55,10 +55,13 @@ const IndexPage = ({
             </TitledSection>
 
             <div className={`shadow-section`}>
-            <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
-                <TopPartners topPartners={topPartners}/>
-            </TopPartnersSection>
+                <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
+                    <TopPartners topPartners={topPartners}/>
+                </TopPartnersSection>
             </div>
+
+
+
             <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
             </TitledSection>

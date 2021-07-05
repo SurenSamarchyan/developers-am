@@ -13,9 +13,9 @@ const ArticleTile = ({title, description, slug, coverImage}) => (
             <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200}}/>
         </Link>}
         <CardContent>
-            <a href={`/${slug}`}>
+            <HeaderLink to={`/${slug}`}>
                 <h3 title={title}> {title}</h3>
-            </a>
+            </HeaderLink>
             <p title={description}>{description}</p>
             <SeeMore link={articleUrl(slug)} text={'Տեսնել ավելին'}/>
         </CardContent>
@@ -46,9 +46,26 @@ const ArticleCard = styled.div`
 `
 
 const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   padding: 16px;
   font-size: 16px;
 
+  p {
+    margin: 16px 0 24px;
+    display: -webkit-box;
+    width: 100%;
+    height: 48px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`
+const HeaderLink = styled(Link)`
+width: 100%;
   h3 {
     font-size: 20px;
     color: ${theme.colors.red};
@@ -57,16 +74,4 @@ const CardContent = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
   }
-
-  p {
-    margin: 16px 0 24px;
-    line-height: 1.5;
-    height: 48px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 `
-
