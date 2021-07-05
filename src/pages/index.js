@@ -20,6 +20,8 @@ const IndexPage = ({
                                bannerBackgroundImage,
                                bannerTitle,
                                bannerSubtitle,
+                               bannerBtnText,
+                               bannerBtnLink,
                                aboutUsTitle,
                                aboutUsText,
                                topPartnersTitle,
@@ -39,6 +41,8 @@ const IndexPage = ({
                 bgImage={bannerBackgroundImage}
                 title={bannerTitle}
                 subtitle={bannerSubtitle}
+                bannerBtnText={bannerBtnText}
+                bannerBtnLink={bannerBtnLink}
             />
 
             <TitledSection title={aboutUsTitle} id={'aboutUs'}>
@@ -50,10 +54,11 @@ const IndexPage = ({
                       textType={'html'}/>
             </TitledSection>
 
+            <div className={`shadow-section`}>
             <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
                 <TopPartners topPartners={topPartners}/>
             </TopPartnersSection>
-
+            </div>
             <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
             </TitledSection>
@@ -74,6 +79,8 @@ export const query = graphql`
             bannerBackgroundImage {
                 url
             }
+            bannerBtnText
+            bannerBtnLink
             aboutUsTitle,
             aboutUsText,
             topPartnersTitle
@@ -93,9 +100,8 @@ export const query = graphql`
                 slug
                 description
                 coverImage {
-                    fixed {
-                        src
-                    }
+                    gatsbyImageData(aspectRatio: 1.7)
+                    alt
                 }
             }
             contactUsTitle

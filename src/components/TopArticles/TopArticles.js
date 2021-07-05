@@ -5,15 +5,11 @@ import ContentGrid from "../common/ContentGrid/ContentGrid";
 const TopArticles = ({topArticles}) => {
 	
 	return(
-		<ContentGrid>
+		<ContentGrid cols={2}>
+
 			{
 				topArticles.map(article => (
-					<ArticleTile
-						title={article.title}
-						coverImageSrc={article.coverImage?.fixed?.src}
-						description={article.description}
-						slug={article.slug}
-						key={article.id}
+					<ArticleTile {...article} key={article.id}
 					/>
 				))
 			}

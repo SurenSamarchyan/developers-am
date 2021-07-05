@@ -11,9 +11,9 @@ const NavBar = ({links, className, onClick}) => {
             <ul>
                 {
                     links.map(link => (
-                        <li key={link.id} onClick={onClick}>
+                        <li key={link.id}>
 
-                            <AnchorLink to={link.url} title={link.title}/>
+                            <AnchorLink to={link.url} title={link.title} onClick={onClick}/>
                             {
                                 link.treeChildren.length > 0 && <SubMenu subMenuItems={link.treeChildren}/>
                             }

@@ -1,2 +1,2 @@
 
-// exports.articleUrl = (slug) => `/a/${slug}/`;  // < ---------- url example
+exports.articleUrl = (slug) => `/n/${slug}/`;

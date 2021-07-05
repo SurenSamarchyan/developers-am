@@ -9,7 +9,7 @@ const TitledSection = ({title, id, children, seeMoreLink}) => (
         <SectionTitle>{title}</SectionTitle>
         <SectionContent>
             {children}
-            {seeMoreLink && <SeeMore link={''} text={'Տեսնել ավելին'}/>}
+            {seeMoreLink && <SeeMore link={'/'} text={'Տեսնել ավելին'}/>}
         </SectionContent>
     </SectionWrapper>
 )
@@ -33,8 +33,8 @@ const SectionWrapper = styled(ContainerBox)`
     padding-bottom: 56px;
   }
   ${theme.media.xl} {
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: 140px;
+    padding-bottom: 140px;
   }
 `
 const SectionTitle = styled.h2`

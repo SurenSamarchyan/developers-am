@@ -128,25 +128,29 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
   }
+
+  .shadow-section {
+    box-shadow: 0 0px 42px 4px #5a5a5a1c;
+  }
 `
 
 export const StyledBtn = css`
-      min-height: 48px;
-      padding: 12px 32px;
-      border-radius: 10px;
+  min-height: 48px;
+  padding: 12px 32px;
+  border-radius: 10px;
 
-      background-color: ${theme.colors.red};
+  background-color: ${theme.colors.red};
 
-      font-size: 16px;
-      text-decoration: none;
-      font-style: normal;
-      font-weight: ${theme.fontWeights.bold};
+  font-size: 16px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: ${theme.fontWeights.bold};
 
-      color: white;
+  color: white;
 
-      ${theme.media.md} {
-            height: 56px;
-            padding: 16px 56px;
-            font-size: 20px;
-      }
+  ${theme.media.md} {
+    height: 56px;
+    padding: 16px 56px;
+    font-size: 20px;
+  }
 `

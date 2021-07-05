@@ -7,47 +7,30 @@
 const path = require(`path`)
 const urls = require('./src/urls')
 
-exports.createPages = async ({ graphql, actions }) => {
-    const {createPage, createRedirect} = actions
-
-   /*
-------  template page example  -------
-
-   const {data} = await graphql(`
+exports.createPages = async ({actions, graphql}) => {
+    const {data: {articles}} = await graphql(`
     {
       articles: allDatoCmsArticle {
         nodes {
           slug
         }
       }
-      forms: allDatoCmsForm {
-          nodes {
-            slug
-          }
-      }
-      redirects: allDatoCmsRedirect {
-        nodes {
-          redirectType
-          oldUrl
-          newUrl
-        }
-      }
     }
   `)
 
     // Article pages
-    data.articles.nodes.forEach((article) =>
-        createPage({
+    articles.nodes.forEach((article) =>
+        actions.createPage({
             path: urls.articleUrl(article.slug),
-            component: path.resolve(`./src/templates/article.tsx`),
+            component: path.resolve(`./src/templates/article.js`),
             context: {
                 slug: article.slug
             },
         })
-    )*/
+    )
 }
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({stage, actions}) => {
     if (stage.startsWith('develop')) {
         actions.setWebpackConfig({
             resolve: {

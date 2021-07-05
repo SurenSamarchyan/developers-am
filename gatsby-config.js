@@ -11,13 +11,7 @@ module.exports = {
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
-        {
-            resolve: "gatsby-plugin-anchor-links",
-            options: {
-                offset: -90
-            }
-        }
-        ,
+        `gatsby-plugin-anchor-links`,
         {
             resolve: `gatsby-source-datocms`,
             options: {
