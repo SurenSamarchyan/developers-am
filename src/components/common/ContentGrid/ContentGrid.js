@@ -20,7 +20,7 @@ const GridItem = styled.li`
   margin-bottom: 32px;
 
   ${theme.media.md} {
-    width: ${props => `calc(${100 / props.cols}% - 24px)`};
+    width: ${props => `calc(${100 / props.cols}% - 20px)`};
     margin-bottom: 0;
   } 
 `
