@@ -2,12 +2,13 @@ import React from 'react'
 import {graphql} from "gatsby";
 import styled from "styled-components";
 import BannerBlock from "../components/Banner/Banner";
-import TitledSection from "../components/common/TitledSection/TitledSection";
+import TitledSection from "../components/Common/TitledSection/TitledSection";
 import TopArticles from "../components/TopArticles/TopArticles";
 import TopPartners from "../components/TopPartners/TopPartners";
-import Text from "../components/common/Text";
+import Text from "../components/Common/Text";
 import {useWindowSize} from "../hooks/useWindowSize";
 import ContactUs from "../components/ContactUs/ContactUs";
+import Seo from "../components/Seo";
 
 const TopPartnersSection = styled(TitledSection)`
   background-color: red;
@@ -17,6 +18,7 @@ const TopPartnersSection = styled(TitledSection)`
 const IndexPage = ({
                        data: {
                            datoCmsHomePage: {
+                               seoSettings,
                                bannerBackgroundImage,
                                bannerTitle,
                                bannerSubtitle,
@@ -37,6 +39,8 @@ const IndexPage = ({
 
     return (
         <>
+            <Seo {...seoSettings}/>
+
             <BannerBlock
                 bgImage={bannerBackgroundImage}
                 title={bannerTitle}
@@ -60,8 +64,6 @@ const IndexPage = ({
                 </TopPartnersSection>
             </div>
 
-
-
             <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
             </TitledSection>
@@ -77,6 +79,15 @@ const IndexPage = ({
 export const query = graphql`
     query {
         datoCmsHomePage {
+            seoSettings {
+                title
+                description
+                image {
+                    fixed(width: 600) {
+                        src
+                    }
+                }
+            }
             bannerSubtitle
             bannerTitle
             bannerBackgroundImage {

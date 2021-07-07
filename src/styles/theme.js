@@ -6,7 +6,7 @@ const breakpoints = {
     lg: 991,
     xl: 1280,
 }
-const baseSpace = 8
+const baseSpace = 16
 
 export const theme = {
     space: {
@@ -84,6 +84,7 @@ export const theme = {
     colors: {
         red: '#E52F42',
         blue: '#0E2B56',
+        white: '#FFFFFF'
     },
     borderRadius: 4,
     borderRadiusSizes: {

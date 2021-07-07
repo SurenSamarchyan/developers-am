@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import {ContainerBox} from "../common/ContainerBox/ContainerBox";
+import {ContainerBox} from "../Common/ContainerBox/ContainerBox";
 import {theme} from "../../styles/theme";
 import {AnchorLink} from "gatsby-plugin-anchor-links";
 import {StyledBtn} from "../../styles/globalStyles";
