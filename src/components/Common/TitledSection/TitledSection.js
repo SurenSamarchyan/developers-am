@@ -4,7 +4,7 @@ import {theme} from "../../../styles/theme";
 import {ContainerBox} from "../ContainerBox/ContainerBox";
 import SeeMore from "../../SeeMore/SeeMore";
 
-const TitledSection = ({title, id, children, seeMoreLink}) => (
+const TitledSection = ({title, id, children, seeMoreLink, padding}) => (
     <SectionWrapper id={id}>
         <SectionTitle>{title}</SectionTitle>
         <SectionContent>

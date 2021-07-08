@@ -2,7 +2,13 @@ require('dotenv').config()
 
 module.exports = {
     siteMetadata: {
-        title: `AmDevelopers`,
+        site: 'Armenian Developers Association',
+        title: process.env.PROJECT_NAME,
+        description: 'Armenian Developers Associations web app',
+        siteUrl: process.env.SITE_URL,
+        language: 'de',
+        color: '#0E2B56',
+        author: 'Suren Samarchyan',
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

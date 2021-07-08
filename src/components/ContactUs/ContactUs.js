@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components"
 import {theme} from "../../styles/theme";
-import TitledSection from "../common/TitledSection/TitledSection";
+import TitledSection from "../Common/TitledSection/TitledSection";
 import {graphql, useStaticQuery} from "gatsby";
 import {StyledBtn} from "../../styles/globalStyles";
 

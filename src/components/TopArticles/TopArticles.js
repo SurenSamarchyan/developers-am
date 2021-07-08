@@ -1,6 +1,6 @@
 import React from "react";
 import ArticleTile from "./ArticleTile";
-import ContentGrid from "../common/ContentGrid/ContentGrid";
+import ContentGrid from "../Common/ContentGrid/ContentGrid";
 
 const TopArticles = ({topArticles}) => {
 	
