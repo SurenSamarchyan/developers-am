@@ -9,6 +9,12 @@ const breakpoints = {
 const baseSpace = 8
 
 export const theme = {
+    breakpoints:{
+        sm: 576,
+        md: 768,
+        lg: 991,
+        xl: 1280,
+    },
     space: {
         xs: baseSpace,
         s: baseSpace * 1.5,

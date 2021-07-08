@@ -6,7 +6,7 @@ const PartnerTile = ({title, slug, coverImage}) => {
 
     return (
         <StyledPartnerTile href={`/${slug}`}>
-            {coverImage && <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200, borderRadius: 3}}/>}
+            {coverImage && <GatsbyImage image={coverImage.gatsbyImageData} alt={`${coverImage.alt}`} style={{maxHeight: 200, borderRadius: 3, display: "block"}}/>}
             <h3>{title}</h3>
         </StyledPartnerTile>
     )
@@ -15,6 +15,7 @@ const PartnerTile = ({title, slug, coverImage}) => {
 export default PartnerTile
 
 const StyledPartnerTile = styled.a`
+  display: block;
   overflow: hidden;
   font-size: 18px;
   line-height: 25px;

@@ -8,6 +8,7 @@ import TopPartners from "../components/TopPartners/TopPartners";
 import Text from "../components/common/Text";
 import {useWindowSize} from "../hooks/useWindowSize";
 import ContactUs from "../components/ContactUs/ContactUs";
+import QuotesSection from "../components/Quotes Block/QuotesSection";
 
 const TopPartnersSection = styled(TitledSection)`
   background-color: red;
@@ -28,6 +29,10 @@ const IndexPage = ({
                                topPartners,
                                topArticlesTitle,
                                topArticles,
+                               quoteText,
+                               quoteAuthor,
+                               quoteFirstBannerImage,
+                               quoteSecondBannerImage,
                                contactUsTitle,
                                contactUsBackgroundImage,
                            }
@@ -60,7 +65,11 @@ const IndexPage = ({
                 </TopPartnersSection>
             </div>
 
-
+            <QuotesSection author={quoteAuthor}
+                           text={quoteText}
+                           firstBanner={quoteFirstBannerImage}
+                           secondBanner={quoteSecondBannerImage}
+            />
 
             <TitledSection title={topArticlesTitle} id={'news'}>
                 <TopArticles topArticles={topArticles}/>
@@ -107,11 +116,18 @@ export const query = graphql`
                     alt
                 }
             }
+            quoteAuthor
+            quoteText
+            quoteFirstBannerImage {
+                gatsbyImageData(aspectRatio: 1.5)
+            }
+            quoteSecondBannerImage {
+                gatsbyImageData(aspectRatio: 0.8)
+            }
             contactUsTitle
             contactUsBackgroundImage {
                 url
             }
-
         }
     }`
 
