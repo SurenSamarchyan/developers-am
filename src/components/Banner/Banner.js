@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import {ContainerBox} from "../Common/ContainerBox/ContainerBox";
+import {ContainerBox} from "../common/ContainerBox/ContainerBox";
 import {theme} from "../../styles/theme";
 import {AnchorLink} from "gatsby-plugin-anchor-links";
 import {StyledBtn} from "../../styles/globalStyles";
@@ -14,7 +14,10 @@ const BannerBlock = ({
                      }) => {
 
     return (
-        <Banner bgImage={bgImage}>
+        <Banner bgImage={bgImage} onScroll={() => window.scrollTo({
+            top: '100vh',
+            behavior: 'smooth',
+        })}>
             <ContainerBox className='opacity-block'>
                 <BannerTitle>{subtitle}</BannerTitle>
                 <BannerText>{title}</BannerText>
@@ -107,7 +110,7 @@ const BannerText = styled.p` {
   color: ${theme.colors.blue};
 
   ${theme.media.md} {
-    font-size: 48px;
+    font-size: 44px;
     max-height: 180px;
   }
 

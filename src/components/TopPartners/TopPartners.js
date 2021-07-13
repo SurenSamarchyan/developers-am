@@ -1,6 +1,6 @@
 import React from "react";
 import PartnerTile from "./PartnerTile";
-import ContentGrid from "../Common/ContentGrid/ContentGrid";
+import ContentGrid from "../common/ContentGrid/ContentGrid";
 
 const TopPartners = ({topPartners}) => {
 

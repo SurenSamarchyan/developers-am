@@ -58,13 +58,13 @@ const IndexPage = ({
                 <Text text={aboutUsText}
                       as={'div'}
                       color={'#444444'}
-                      fontSize={width > 991 ? '32px' : '20px'}
+                      fontSize={width > 991 ? '28px' : '20px'}
                       lineHeight={'1.5'}
                       textType={'html'}/>
             </TitledSection>
 
             <div className={`shadow-section`}>
-                <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/'}>
+                <TopPartnersSection title={topPartnersTitle} id={'partners'} seeMoreLink={'/partners'}>
                     <TopPartners topPartners={topPartners}/>
                 </TopPartnersSection>
             </div>
@@ -75,8 +75,8 @@ const IndexPage = ({
                            secondBanner={quoteSecondBannerImage}
             />
 
-            <TitledSection title={topArticlesTitle} id={'news'}>
-                <TopArticles topArticles={topArticles}/>
+            <TitledSection title={topArticlesTitle} id={'news'} seeMoreLink={'/partners'}>
+                <TopArticles topArticles={topArticles} />
             </TitledSection>
 
             <ContactUs title={contactUsTitle}

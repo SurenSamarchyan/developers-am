@@ -3,7 +3,7 @@ import {GatsbyImage} from "gatsby-plugin-image";
 import {graphql} from 'gatsby'
 import Seo from "../components/Seo";
 import ArticleContent from "../components/Article/ArticleContent";
-import {ContainerBox} from "../components/Common/ContainerBox/ContainerBox";
+import {ContainerBox} from "../components/common/ContainerBox/ContainerBox";
 import styled from "styled-components";
 import {theme} from "../styles/theme";
 
